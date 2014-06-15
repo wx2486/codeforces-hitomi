@@ -8,8 +8,7 @@
 #
 # functions:
 # pull data from codeforces.com
-# save raw json data into raw.dat
-# save data in table format into sub.dat
+# save formatted json data into json.dat
 
 print('Eyes are open!')
  
@@ -29,7 +28,7 @@ url_from = '1'
 url_count = '10'
 
 # Should I print data on the screen? True or False
-print_target = True
+print_target = False
 
 #
 #### end of configure
@@ -42,41 +41,24 @@ print('Link start.')
 print('Target url: ' + target_url)
 print('Downloading...')
 
-target = urllib.request.urlopen(target_url).read().decode()
+target = urllib.request.urlopen(target_url)
 
 print('Target obtained.')
-print('Dumping target as it is...')
+print('Transform target into nice json format...')
 
-raw_file = open('raw.dat', 'w')
-raw_file.write(target)
-raw_file.close()
+json_target = json.dumps(json.loads(target.read().decode()),sort_keys=True, indent=4)
 
 print('Done.')
 
-if print_target:
+if (print_target):
     print('Target:')
-    print(json.dumps(target, sort_keys=True, indent=4))
+    print(json_target)
 
-dic = json.loads(target)
+print('Dumping target in nice json format...')
 
-if dic['status'] != 'OK':
-    print('response status not ok')
-    exit()
+raw_file = open('json.dat', 'w')
+raw_file.write(json_target)
+raw_file.close()
 
-subs = dic['result']
-#print(type(subs))
-print(str(len(subs)) + ' submissions:')
-
-for i in subs[0]:
-    print(i + '\t', end='')
-print('')
-
-for i in subs:
-    for j in i:
-        if j == 'problem':
-            print(i['problem']['index'] + '\t', end='')
-        elif j == 'author':
-            print(i['author']['members'][0]['handle'] + '\t', end='')
-        else:
-            print(str(i[j]) + '\t', end='')
-    print('')
+print('Done.')
+print('Eyes closed.')
