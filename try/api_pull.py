@@ -46,12 +46,12 @@ print('Link start.')
 print('Target url: ' + target_url)
 print('Downloading...')
 
-target = urllib.request.urlopen(target_url)
+target = urllib.request.urlopen(target_url).read()
 
 print('Target obtained.')
 print('Loading target...')
 
-json_target = json.loads(target.read().decode())
+json_target = json.loads(target.decode())
 
 print('Done.')
 print('Checking server response status...')
