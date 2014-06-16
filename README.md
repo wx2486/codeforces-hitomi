@@ -12,3 +12,6 @@ port: 3306
 username: hitomi
 
 password: sharingan
+
+Warning: there is some problem with my dropbox now, so the ip.txt may be out of date.
+I will fix this as soon as possible.
