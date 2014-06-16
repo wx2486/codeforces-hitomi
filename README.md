@@ -13,5 +13,5 @@ username: hitomi
 
 password: sharingan
 
-Warning: there is some problem with my dropbox now, so the ip.txt may be out of date.
+Warning: there are some problems with my dropbox now, so the ip.txt may be out of date.
 I will fix this as soon as possible.
