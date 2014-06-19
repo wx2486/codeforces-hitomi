@@ -5,13 +5,9 @@ Pull data from codeforces api and produce useful analysis. Even a website with m
 
 Now some data is accessable from a mysql server:
 
-// see https://www.dropbox.com/s/z6hwlo9qr444btn/ip.txt
+ip see https://github.com/wx2486/ip_address/blob/master/ip.txt
 
-Dropbox is unreachable for me now.
-I'll update my ip manually here.
-If you know better way, please let me know.
-
-ip: 220.248.60.214
+(ip may change over time, when my adsl conncection refreshes.)
 
 port: 3306
 
