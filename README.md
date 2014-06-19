@@ -11,7 +11,7 @@ Dropbox is unreachable for me now.
 I'll update my ip manually here.
 If you know better way, please let me know.
 
-ip: 58.246.157.4
+ip: 220.248.60.214
 
 port: 3306
 
