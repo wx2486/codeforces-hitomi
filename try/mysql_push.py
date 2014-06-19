@@ -15,20 +15,18 @@ print('Eyes are open!')
 import json
 import mysql.connector
 
-print('Eating hard disk...')
+print('Eating hard disk...', end='', flush=True)
 
 json_file = open('json.dat', 'r')
 
 print('Done.')
-print('Loading json...')
+print('Loading json...', end='', flush=True)
 
 json_target = json.load(json_file)
 
 print('Done.')
 
 subms = json_target['result']
-
-print('Focus on content.')
 
 fields = ('id',
           'contestId',
@@ -52,7 +50,7 @@ for i in range(len(fields)):
 
 sql_head += ') values ('
 
-print('Connect to the ocean...')
+print('Connect to the ocean...', end='', flush=True)
 
 mysql_con = mysql.connector.connect(user='hitomi',
                                     password='sharingan',
@@ -61,7 +59,7 @@ mysql_cursor = mysql_con.cursor()
 
 print('Done.')
 
-print('Json flowing into the ocean...')
+print('Json flowing into the ocean...', end='', flush=True)
 
 for sub in subms:
     sql_query = sql_head

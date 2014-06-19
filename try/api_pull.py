@@ -10,6 +10,7 @@
 # pull data from codeforces.com
 # save formatted json data into json.dat
 
+
 print('Eyes are open!')
  
 import urllib.request
@@ -33,7 +34,7 @@ print_target = False
 #
 #### end of configure
 
-print('Mission confirmed.')
+#print('Mission confirmed.')
 
 target_url = 'http://codeforces.com/api/contest.status?contestId='\
     + str(url_contestId)
@@ -42,19 +43,18 @@ if url_from > 0:
 if url_count > 0:
     target_url += '&count=' + str(url_count)
 
-print('Link start.')
-print('Target url: ' + target_url)
-print('Downloading...')
+print('Link start. Target url: ' + target_url)
+print('Downloading...', end='', flush=True)
 
 target = urllib.request.urlopen(target_url).read()
 
 print('Target obtained.')
-print('Loading target...')
+print('Loading target...', end='', flush=True)
 
 json_target = json.loads(target.decode())
 
 print('Done.')
-print('Checking server response status...')
+print('Checking server response status...', end='', flush=True)
 
 if json_target['status'] != 'OK':
     print('Status: ' + json_target['status'])
@@ -62,8 +62,8 @@ if json_target['status'] != 'OK':
     print('Abort.')
     exit()
 
-print('Status: OK')
-print('Transform target into nice json format...')
+print('OK.')
+print('Transform target into nice json format...', end='', flush=True)
 
 json_target_str = json.dumps(json_target, sort_keys=True, indent=4)
 
@@ -73,7 +73,7 @@ if (print_target):
     print('Target:')
     print(json_target_str)
 
-print('Dumping target in nice json format...')
+print('Dumping target in nice json format...', end='', flush=True)
 
 json_file = open('json.dat', 'w')
 json_file.write(json_target_str)

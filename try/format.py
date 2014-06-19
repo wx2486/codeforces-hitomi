@@ -15,20 +15,18 @@ print('Eyes are open!')
 
 import json
 
-print('Eating hard disk...')
+print('Eating hard disk...', end='', flush=True)
 
 json_file = open('json.dat', 'r')
 
 print('Done.')
-print('Loading json...')
+print('Loading json...', end='', flush=True)
 
 json_target = json.load(json_file)
 
 print('Done.')
 
 subms = json_target['result']
-
-print('Focus on content.')
 
 fields = ('id',
           'contestId',
@@ -50,7 +48,7 @@ for i in range(len(fields)):
     table += fields[i]
 table += '\n'
 
-print('Transform json into a table...')
+print('Transform json into a table...', end='', flush=True)
 
 for sub in subms:
     for i in range(len(fields)):
@@ -67,7 +65,7 @@ for sub in subms:
     table += '\n'
 
 print('Done.')
-print('Dump table...')
+print('Dump table...', end='', flush=True)
 
 table_file = open('table.dat', 'w')
 table_file.write(table)
