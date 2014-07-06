@@ -5,5 +5,5 @@ from htm_status import *
 for i in range(500):
     try:
         get_status(i, 'refresh')
-    except:
-        pass
+    except Exception as ex:
+        print(ex)
