@@ -19,9 +19,20 @@ import mysql.connector
 
 # function get_status
 # modes: 'update', 'refresh', 'import', 'dump'
+# apis: 'contest.status', 'user.status'
+
+# update mode: get NEW data from cf website and push into mysql
+# refresh mode: get ALL data from cf websit, put it in cache file and push into mysql
+# import mode: import data from cache file into mysql
+# dump mode: get ALL data from cf website and put it in cache file
 
 def get_status(id, mode='update', api='contest.status'):
     print(mode+' '+api+' '+str(id))
+
+    if mode != 'update' and mode != 'refresh' and mode != 'import' and mode != 'dump':
+        print('Error: invalid mode name: '+mode)
+        return
+
     target_url = None
     file_dir = None
     if api == 'contest.status':
