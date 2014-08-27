@@ -8,9 +8,9 @@ hitomi 0.01 released. Written in python. We can use it to move data from cf to f
 Now some data is accessable from a mysql server:
 
 // codeforces submission data is too large, my laptop is not capable. So, from now on, I will put a small part of
-it into mysql, if not none of them......
+it into mysql, if not none of them......Contain contest 1-5 now.
 
-//ip see https://github.com/wx2486/ip_address/blob/master/ip.txt
+ip see https://github.com/wx2486/ip_address/blob/master/ip.txt
 
 (ip may change over time, when my adsl conncection refreshes.)
 
